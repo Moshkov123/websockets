@@ -11,3 +11,6 @@ Broadcast::channel('testChannel', function () {
 Broadcast::channel('system-maintenance', function () {
     return true;
 });
+Broadcast::channel('private-channel.user.{id}', function ($user,$id) {
+    return $user->id==$id;
+});
